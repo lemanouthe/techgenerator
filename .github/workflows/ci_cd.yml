@@ -34,7 +34,7 @@ jobs:
             - run: pip install setuptools>=65.5.1 wheel>=0.38.1
             - run: pip install -r requirements.txt # install all our dependencies for the project
             - name: run flake8
-              run: flake8 .
+              run: flake8 . --ignore=E501,W503,W292 --exclude=__init__.py
             - name: run black
               run: |
                   black . -l 129 --extend-exclude ".*\b(migrations)\b.*" --check

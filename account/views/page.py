@@ -20,7 +20,8 @@ def user_signup(request):
                 on_error = True
     else:
         form = SignupForm()
-    return render(request, "pages/auth/register.html", {"form": form, "on_error": on_error})
+        context = {"form": form, "on_error": on_error}
+    return render(request, "pages/auth/register.html", context)
 
 
 def user_login(request):
@@ -38,7 +39,8 @@ def user_login(request):
                 on_error = True
     else:
         form = LoginForm()
-    return render(request, "pages/auth/login.html", {"form": form, "on_error": on_error})
+        context = {"form": form, "on_error": on_error}
+    return render(request, "pages/auth/login.html", context)
 
 
 def user_logout(request):
