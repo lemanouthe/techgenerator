@@ -28,7 +28,6 @@ jobs:
               run: |
                   chmod +x ./setup_env.sh
                   bash ./setup_env.sh
-
             - run: pip install flake8
             - run: pip install black
             - run: pip install setuptools>=65.5.1 wheel>=0.38.1
