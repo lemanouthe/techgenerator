@@ -7,15 +7,23 @@ from account.models import User
 class SignupForm(UserCreationForm):
     first_name = forms.CharField(required=True)
     last_name = forms.CharField(required=True)
-    registration_token = forms.CharField(required=True, max_length=100, help_text="Enter your promo code (optional)")
+    registration_token = forms.CharField(
+        required=True,
+        max_length=100,
+        help_text="Enter your promo code (optional)",
+    )
 
     class Meta:
         model = User
-        fields = ["email", "password1", "password2", "first_name", "last_name"]
+        fields = [
+            "email",
+            "password1",
+            "password2",
+            "first_name",
+            "last_name",
+        ]
 
 
 class LoginForm(forms.Form):
     email = forms.EmailField()
-    password = forms.CharField(
-        widget=forms.PasswordInput
-    )
+    password = forms.CharField(widget=forms.PasswordInput)
